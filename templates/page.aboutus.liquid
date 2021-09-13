@@ -1,0 +1,29 @@
+<!-- page.aboutus.liquid -->
+ {{ page.content }}
+ 
+<div class="marginaboutus">
+  {% section 'text-with-image3' %}
+  <div style="border-top: none !important; margin-bottom: 80px;">
+    {% section 'text-with-image4' %}
+    {% section 'text-with-image2' %}
+  </div>
+</div>
+
+<style>
+
+@media screen and (max-width: 1000px) {
+  .mobileaboutus {
+    
+    width: 100% !important;
+  }
+}
+.marginaboutus {
+    margin: 5rem 10rem 0rem 10rem !important;
+}
+@media screen and (max-width: 1000px) {
+  .marginaboutus {
+    margin: 0 0 0 0rem !important;
+  }
+}
+ 
+</style>

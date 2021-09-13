@@ -1,0 +1,176 @@
+<!-- sections/testimonials -->
+{%- capture flickity_options -%}
+{
+  "prevNextButtons": false,
+  "wrapAround": true,
+  "dragThreshold": 16,
+  "pageDots": {% if section.blocks.size > 1 %}true{% else %}false{% endif %},
+  "autoPlay": {% if section.settings.autoplay %}{{ section.settings.cycle_speed | times: 1000 }}{% else %}false{% endif %}
+}
+{%- endcapture -%}
+
+{%- assign should_show_nav = false -%}
+
+{%- for block in section.blocks -%}
+  {%- if block.settings.logo -%}
+    {%- assign should_show_nav = true -%}
+    {%- break -%}
+  {%- endif -%}
+{%- endfor -%}
+
+<section style="padding-bottom: 60px;" class="padding-bottommobile Section Section--spacingNormal" id="section-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="testimonials">
+
+  {%- if section.settings.header_testimonial != blank -%}
+    <div class="header-testimonial"> 
+      <h1>{{ section.settings.header_testimonial }}</h1>
+    </div>
+  {%- endif -%}
+
+  <div class="TestimonialList {% if should_show_nav %}TestimonialList--withNav{% endif %} Carousel Carousel--fadeIn" data-flickity-config='{{ flickity_options }}'>
+    {%- for block in section.blocks -%}
+      <div id="block-{{ block.id }}" class="Carousel__Cell Testimonial {% if forloop.first %}is-selected{% endif %}" {{ block.shopify_attributes }} data-slide-index="{{ forloop.index0 }}">
+        <div class="Container">
+          {%- if block.settings.quote != blank -%}
+            <div style="font-size: 1.1rem;" class="Testimonial__Content">
+              {{ block.settings.quote }}
+            </div>
+          {%- endif -%}
+
+          {%- if block.settings.logo != blank -%}
+            <img class="Testimonial__Logo hidden-lap-and-up" src="{{ block.settings.logo | img_url: '1800x' }}" alt="{{ block.settings.logo.alt | escape }}">
+          {%- endif -%}
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+
+  {%- if should_show_nav -%}
+    <div class="TestimonialNav hidden-pocket">
+      {%- for block in section.blocks -%}
+        {%- if block.settings.logo != blank -%}
+          <img class="1 TestimonialNav__Item {% if forloop.first %}is-selected{% endif %}" src="{{ block.settings.logo | img_url: '1800x' }}" alt="{{ block.settings.logo.alt | escape }}" data-index="{{ forloop.index0 }}">
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+</section>
+
+<style>
+  #section-{{ section.id }} {
+    color: {{ section.settings.text_color }};
+    background: {{ section.settings.background }};
+  }
+
+#section-{{ section.id }} .TestimonialNav__Item {
+  max-width: -moz-available !important;
+  width: 70%
+}
+
+#section-{{ section.id }} .Testimonial__Content {
+  max-width: 420px;
+}
+
+@media screen and (max-width: 800px) {
+  .Testimonial__Content {
+  max-width: 550px !important;
+  }
+}
+
+#section-{{ section.id }} .Testimonial__Logo {
+  max-width: -moz-available !important;
+
+}
+ @media screen and (max-width: 800px) {
+    .padding-bottommobile {
+    padding-bottom: 80px !important;
+  }
+}
+
+  #section-{{ section.id }} .flickity-page-dots .dot:not(.is-selected) {
+    border-color: {{section.settings.dot_color | color_mix: section.settings.dot_color, 85}};
+  }
+
+  #section-{{ section.id }} .flickity-page-dots .dot.is-selected {
+    background: {{section.settings.dot_color}};
+    border-color: {{section.settings.dot_color}};
+  }
+
+  .header-testimonial {
+    text-align: center;
+    color: var(--heading-color-alternate);
+    margin-bottom: 20px;
+    font-size: 2.3rem;
+
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Testimonials",
+  "class": "shopify-section--bordered",
+  "max_blocks": 7,
+  "settings": [
+
+    {
+      "type": "text",
+      "id": "header_testimonial",
+      "label": "Header"
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Auto rotate between testimonials",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "cycle_speed",
+      "min": 3,
+      "max": 8,
+      "step": 1,
+      "unit": "sec",
+      "label": "Change testimonials every",
+      "default": 5
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background",
+      "default": "#eaeaea"
+    },
+    {
+      "type": "color",
+      "id": "dot_color",
+      "label": "Dot color",
+      "default": "#eaeaea"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#1c1b1b"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Logo",
+          "info": "340 x 80px .jpg recommended"
+        },
+        {
+          "type": "richtext",
+          "id": "quote",
+          "label": "Quote",
+          "default": "<p>Share what your customers are saying about your products, your company...</p>",
+          "info": "For best results, keep the word count consistent in each quote."
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

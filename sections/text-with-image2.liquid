@@ -1,0 +1,179 @@
+<!--sections/text-with-image2.liquid -->
+
+{%- if section.settings.title2 != blank -%}
+   <h2 style="margin: 4rem 0;text-align: center; font-size: 2rem !important; color: #1F2E54;" class="marginmobileaboutheader colorheaderaboutus SectionHeader__Heading Heading u-h1">{{ section.settings.title2 | escape }}</h2>
+{%- endif -%}
+
+<section class="Section {% unless section.settings.image %}Section--spacingNormal{% endunless %} mobileaboutus2 ">
+  {%- capture section_content -%}
+    <div style="padding-top: 0; padding-bottom: 0;" class="FeatureText__ContentWrapper mobileaboutus2">
+      <div class="nomarginmobileaboutus FeatureText__Content">
+        {%- if section.settings.subheading != blank or section.settings.title != blank -%}
+          <header class="SectionHeader">
+            {%- if section.settings.subheading != blank -%}
+              <h3 style="margin-top:3%;" class="colorheaderaboutus SectionHeader__SubHeading Heading u-h6">{{ section.settings.subheading | escape }}</h3>
+            {%- endif -%}
+
+            {%- if section.settings.title != blank -%}
+              <h2 style="font-size: 2rem !important; color: #1F2E54;" class=colorheaderaboutus "SectionHeader__Heading Heading u-h1">{{ section.settings.title | escape }}</h2>
+            {%- endif -%}
+
+            {%- if section.settings.content != blank -%}
+              <div style="line-height: 20px !important;" class="SectionHeader__Description Rte">
+                {{ section.settings.content }}
+              </div>
+            {%- endif -%}
+
+            {%- if section.settings.link_text != blank -%}
+              <a href="{{ section.settings.link_url }}" class="Link Link--underline">{{ section.settings.link_text | escape }}</a>
+            {%- endif -%}
+          </header>
+        {%- endif -%}
+      </div>
+    </div>
+  {%- endcapture -%}
+
+  {%- capture section_image -%}
+    {%- if section.settings.image != blank -%}
+      <div class="mobileaboutus2 FeatureText__ImageWrapper">
+        {%- capture supported_sizes -%}{%- render 'image-size', sizes: '400,600,700,800,900,1000,1200', image: section.settings.image -%}{%- endcapture -%}
+
+        <div class="AspectRatio aboutusimagemobile imageamb" style="max-width: {{ section.settings.image_width }}px; --aspect-ratio: {{ section.settings.image.aspect_ratio }}">
+          {%- assign image_url = section.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+          <img class="Image--lazyLoad Image--slide{{ section.settings.image_position | capitalize }}" data-src="{{ image_url }}" data-expand="-200" data-widths="[{{ supported_sizes }}]" data-sizes="auto" alt="{{ section.settings.image.alt | escape }}">
+
+          <noscript>
+            <img src="{{ section.settings.image | img_url: '800x' }}" alt="{{ section.settings.image.alt | escape }}">
+          </noscript>
+        </div>
+      </div>
+    {%- endif -%}
+  {%- endcapture -%}
+
+  <div class="textmobileaboutus mobileaboutus2 FeatureText {% if section.settings.image != blank %}FeatureText--withImage FeatureText--image{{ section.settings.image_position | capitalize }}{% endif %}">
+    {%- if section.settings.image_position == 'left' -%}
+      {{- section_image -}}
+      {{- section_content -}}
+    {%- else -%}
+      {{- section_content -}}
+      {{- section_image -}}
+    {%- endif -%}
+  </div>
+</section>
+<style>
+.imageamb {
+  margin-left: auto !important; 
+  display: block !important;
+  margin-right: auto !important;   
+}
+
+.shopify-section--bordered {
+  border-top: none !important;
+}
+
+.colorheaderaboutus {
+  color: var(--heading-color-alternate) !important;
+}
+
+@media screen and (max-width: 1000px) {
+  .mobileaboutus2 {
+    display: block !important;
+    width: 100% !important;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .textmobileaboutus {
+    text-align: center !important;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .aboutusimagemobile {
+    max-width: 100% !important;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .nomarginmobileaboutus {
+    margin: 0 auto !important;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .marginmobileaboutheader {
+     margin: 2rem 2rem !important;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Rich text with image",
+  "class": "shopify-section--bordered",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Sub-heading",
+      "default": "Sub-heading"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Title"
+    },
+    {
+      "type": "text",
+      "id": "title2",
+      "label": "Heading 2",
+      "default": "Title"
+    },   
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image",
+      "info": "1200 x 1200px .png recommended"
+    },
+    {
+      "type": "range",
+      "id": "image_width",
+      "label": "Image width",
+      "min": 200,
+      "max": 800,
+      "step": 20,
+      "info": "Only show inventory quantity if below threshold. Choose 0 to always show.",
+      "default": 300
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image position",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "right"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Text",
+      "default": "<p>Add your own custom content to give more information about your store, availability details...</p>"
+    },
+    {
+      "type": "text",
+      "id": "link_text",
+      "label": "Link text"
+    },
+    {
+      "type": "url",
+      "id": "link_url",
+      "label": "Link URL"
+    }
+  ]
+}
+{% endschema %}

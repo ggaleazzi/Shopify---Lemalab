@@ -1,0 +1,400 @@
+<!-- sections-video-thumbs -->
+<div class="marginsectionvideo" >
+    <section style="margin-top: 90px;" class="Section" id="section-{{ section.id }}">
+
+    {%- if section.settings.title != blank -%}
+                <h2 class="colorheadervideogrid SectionHeader__Heading Heading u-h1">{{ section.settings.title | escape }}</h2>
+            {%- endif -%}
+    <div class="FlexboxIeFix">
+        {%- capture mobile_size -%}750x{% if section.settings.image.height >= 960 %}960{% else %}{{ section.settings.image.height }}{% endif %}{%- endcapture -%}
+
+        <div class="ImageHero {% if section.settings.section_size != 'normal' %}ImageHero--{{ section.settings.section_size }}{% endif %}" {% if section.settings.image %}style="background: url({{ section.settings.image | img_url: '1x1', format: 'jpg' }})"{% endif %}>
+        <div class="ImageHero__ImageWrapper">
+            <div class="ImageHero__Image Image--lazyLoad Image--zoomOut"
+                data-optimumx="1.4"
+                data-expand="-150"
+                {% if section.settings.image %}data-bgset="{{ section.settings.image | img_url: mobile_size, crop: 'center' }} 750w, {{ section.settings.image | img_url: '1000x' }} 1000w, {{ section.settings.image | img_url: '1500x' }} 1500w"{% endif %}>
+            </div>
+
+            <noscript>
+            <div class="ImageHero__Image" style="background-image: url({{ section.settings.image | img_url: '1000x' }})"></div>
+            </noscript>
+
+            {%- unless section.settings.image != blank -%}
+            <div class="paddingvideobig PlaceholderBackground">
+                {{ 'lifestyle-2' | placeholder_svg_tag: 'PlaceholderBackground__Svg PlaceholderSvg--dark' }}
+            </div>
+            {%- endunless -%}
+        </div>
+
+        <div class="ImageHero__ContentOverlay">
+            <header class="SectionHeader">
+            {%- if section.settings.subheading != blank -%}
+                <h3 class="SectionHeader__SubHeading Heading u-h6">{{ section.settings.subheading | escape }}</h3>
+            {%- endif -%}
+
+            
+
+            <div class="SectionHeader__IconHolder">
+                <button type="button" class="Video__PlayButton" data-action="open-modal" aria-label="{{ 'home_page.featured_video.play' | t }}" aria-controls="modal-{{ section.id }}">{% render 'icon' with 'play' %}</button>
+            </div>
+            </header>
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <div id="modal-{{ section.id }}" class="Modal Modal--fullScreen Modal--videoContent" aria-hidden="true" role="dialog" data-scrollable>
+    <div class="Modal__Content">
+        <div class="Container Container--narrow">
+        <div class="VideoWrapper">
+            {% if section.settings.video_url.type == 'youtube' %}
+            <iframe class="Image--lazyLoad" data-src="//www.youtube.com/embed/{{ section.settings.video_url.id }}?autoplay=1&showinfo=0&controls=1&rel=0&modestbranding=1" frameborder="0" allowfullscreen></iframe>
+            {% elsif section.settings.video_url.type == 'vimeo' %}
+            <iframe class="Image--lazyLoad" data-src="//player.vimeo.com/video/{{ section.settings.video_url.id }}?autoplay=1&portrait=0&byline=0&color={{ settings.accent_color | remove_first: '#' }}" frameborder="0"></iframe>
+            {% endif %}
+        </div>
+        </div>
+    </div>
+
+    <button class="Modal__Close Modal__Close--outside" data-animate-bottom data-action="close-modal">{% render 'icon' with 'close' %}</button>
+    </div>
+    <div style="position:relative; " class="thumb-video-grid" >
+    {% for block in section.blocks %}
+        <div class="thumbsmobilepadding" style=" ">
+          <div style="justify-content:center; display: flex; vertical-align: middle; position: relative;">
+            <button style="position:absolute;margin-left: auto;  margin-right: auto; top: calc(50% - 40px);" type="button" class="Video__PlayButton cb-button-margin cb-id-button-home" href="{{ block.settings.thumb_video_url }}">{% render 'icon' with 'play2' %}</button>
+            <img style="width:100%; height: 100%; object-fit: contain;" class="imgbutton" src="{{ block.settings.thumb_image | img_url: 'master' }}"/>
+            
+          </div>
+          <h2 style="margin-bottom: 0">{{ block.settings.video_title }}</h2>
+          <div  class="VideoWrapper" id="cb-modal-home">
+              {% if block.settings.thumb_video_url.type == 'youtube' %}
+              <iframe style="position: relative !important;" class="Image--lazyLoad"  data-src="//www.youtube.com/embed/{{ block.settings.thumb_video_url.id }}?autoplay=1&showinfo=0&controls=1&rel=0&modestbranding=1" frameborder="0" allowfullscreen></iframe>
+              {% elsif block.settings.thumb_video_url.type == 'vimeo' %}
+              <iframe class="Image--lazyLoad" data-src="//player.vimeo.com/video/{{ block.settings.thumb_video_url.id }}?autoplay=1&portrait=0&byline=0&color={{ settings.accent_color | remove_first: '#' }}" frameborder="0"></iframe>
+              {% endif %}
+              
+              <button style="color:white" class="Modal__Close Modal__Close--outside" data-animate-bottom data-action="close-modal">
+                <svg class="Icon Icon--close" role="presentation" viewBox="0 0 16 14">
+                  <path d="M15 0L1 14m14 0L1 0" stroke="currentColor" fill="none" fill-rule="evenodd"></path>
+                </svg>
+              </button>
+          </div>
+        </div>
+        
+    {% endfor %}
+    </div>
+    {%- if section.settings.button_1_text != blank -%}
+      <div style="" class="buttonfooter SectionFooter">
+        <a href="{{ section.settings.button_1_link }}" class="fonttenor Button Button--primary-alternate"> {{ section.settings.button_1_text | escape }}</a>
+      </div>
+    {%- endif -%}
+
+</div>
+
+
+
+<script>
+  const buttonsIdHome = document.querySelectorAll(".cb-id-button-home");
+  const modal2 = document.querySelectorAll("#cb-modal-home");
+  let player = ""
+  function closeModal2(event) {
+    event.preventDefault();
+    modal2.forEach((_modal) => {
+      _modal.classList.remove('cb-ativo-home');
+    });
+    document.body.style.maxWidth = "";
+    document.body.style.overflowY = "auto";
+    if (player != "") {
+      player.pause()
+    }
+  }
+  buttonsIdHome.forEach(( button, index ) => {
+    button.addEventListener('click', (e) => {
+      e.preventDefault(); 
+      modal2[index].children[0].dataSrc = button.href;
+      modal2[index].classList.add('cb-ativo-home');
+      document.body.style.maxWidth = "100vw";
+      document.body.style.overflowY = "hidden";
+      const ytp = document.querySelector(".ytp-cued-thumbnail-overlay");
+      ytp.addEventListener("click", () => {
+        player = document.querySelector("#movie_player > div.html5-video-container > video");
+      })
+    })
+  })
+  
+  modal2.forEach((_modal) => {
+    _modal.addEventListener('click', (event) => {
+      closeModal2(event);
+    })
+  })
+  
+</script>
+
+<style>
+
+#cb-modal-home {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 5%;
+  background-color: rgba(0, 0, 0, .9);
+  animation-name: animateOpacity;
+  animation-duration: .5s;
+  z-index: 2000;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#cb-modal-home.cb-ativo-home {
+  display: block;
+}
+
+.cb-ativo-home .fluid-width-video-wrapper iframe {
+  position: fixed;
+  align-self: center;
+  z-index: 5000;
+  padding: 10% 15%;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+@media (max-width: 780px) {
+  .cb-ativo-home .fluid-width-video-wrapper iframe {
+    padding: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transform-origin: center;
+    height: 80%;
+  }
+}
+
+@keyframes animateOpacity {
+  from {background-color: rgba(0, 0, 0, 0)}
+  to {background-color: rgba(0, 0, 0, 0.3)}
+}
+
+  .cb-text-heading {
+    font-family: Helvetica;
+    font-size: 2.5rem;
+    right: 0;
+  
+  }
+
+  .cb-slide-buttons {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .button.cb-button-margin {
+    text-transform: uppercase;
+  }
+
+  .text-aligned-right .slide-text.cb-align-self {
+    text-align: left;
+  }
+
+
+
+
+.colorheadervideogrid {
+  color: var(--heading-color-alternate) !important;
+  font-size: 2rem !important;
+  text-align: center;
+}
+  #section-{{ section.id }},
+  #section-{{ section.id }} .Heading {
+    color: {{ section.settings.text_color }};
+  }
+
+  #section-{{ section.id }} .ImageHero--large {
+      margin: auto;
+  }
+
+  #section-{{ section.id }}  .VideoWrapper {
+   overflow: inherit !important;
+ }
+  .thumb-video-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 3rem;
+    margin-top: 40px;
+    grid-template-rows: 1fr;
+}
+
+.buttonfooter {
+  margin-top: 100px;
+}
+
+
+@media screen and (min-width: 1150px) {
+  .marginsectionvideo {
+    margin: 0 15%;
+  }
+}
+
+@media screen and (min-width: 170px) and (max-width: 1150px) {
+    .thumb-video-grid {
+        grid-template-columns: 1fr 1fr ;
+        
+    }
+    .marginsectionvideo {
+        margin: 0 10%;
+    }
+    .buttonfooter {
+        margin-top: 150px;
+    }
+  }
+  @media screen and (min-width: 170px) and (max-width: 1150px) {
+    .thumb-video-grid {
+      grid-template-rows: repeat(2, 200px);
+    }
+  }
+  @media screen and (min-width: 170px) and (max-width: 970px) {
+    .thumb-video-grid {
+      grid-template-rows: repeat(2, 1fr);
+    }
+  }
+
+
+@media screen and (max-width: 860px) {
+  .thumb-video-grid {
+    grid-gap: 1.5rem;
+    margin-top: 3%;
+  }
+}
+@media screen and (max-width: 670px) {
+ .thumbsmobilepadding {
+   
+ }
+}
+
+</style>
+
+{% schema %}
+{
+  "name": "Featured video",
+  "max_blocks": 4,
+  "settings": [
+      {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Title"
+    },
+    {
+      "type": "select",
+      "id": "section_size",
+      "label": "Section size",
+      "options": [
+        {
+          "value": "small",
+          "label": "Small"
+        },
+        {
+          "value": "normal",
+          "label": "Normal"
+        },
+        {
+          "value": "large",
+          "label": "Large"
+        },
+        {
+          "value": "super-large",
+          "label": "Super Large"
+        }
+      ],
+      "default": "large"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image",
+      "info": "1600 x 400 .jpg recommended."
+    },
+    {
+      "type": "video_url",
+      "accept": ["vimeo", "youtube"],
+      "id": "video_url",
+      "label": "Video URL",
+      "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+    },
+    {
+      "type": "text",
+      "id": "button_1_text",
+      "label": "Button Text"
+    },
+    {
+      "type": "url",
+      "id": "button_1_link",
+      "label": "Button Link"
+    }
+
+  ],
+
+  "blocks": [
+    {
+      "type": "video",
+      "name": "Video thumb",
+      "settings": [
+       
+       {
+        "type": "video_url",
+        "accept": ["vimeo", "youtube"],
+        "id": "thumb_video_url",
+        "label": "Video URL",
+        "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+       },
+       {
+        "type": "image_picker",
+        "id": "thumb_image",
+        "label": "Image",
+        "info": "1600 x 400px .jpg recommended."
+       },
+       {
+        "type": "text",
+        "id": "video_title",
+        "label": "Video title",
+        "default": "Title"
+       }
+      ]
+    }]
+}
+{% endschema %}
+
+
+ <!-- <div class="ImageHero {% if section.settings.section_size != 'normal' %}ImageHero--{{ section.settings.section_size }}{% endif %}" {% if block.settings.thumb_image %}style="background: url({{ block.settings.thumb_image | img_url: '1x1', format: 'jpg' }})"{% endif %}>
+      <div class="ImageHero__ImageWrapper">
+        <div class="ImageHero__Image Image--lazyLoad Image--zoomOut"
+             data-optimumx="1.4"
+             data-expand="-150"
+             {% if block.settings.thumb_image %}data-bgset="{{ block.settings.thumb_image | img_url: mobile_size, crop: 'center' }} 750w, {{ block.settings.thumb_image | img_url: '1000x' }} 1000w, {{ block.settings.thumb_image | img_url: '1500x' }} 1500w"{% endif %}>
+        </div>
+
+        <noscript>
+          <div class="ImageHero__Image" style="background-image: url({{ block.settings.thumb_image | img_url: '1000x' }})"></div>
+        </noscript>
+
+        {%- unless block.settings.thumb_image != blank -%}
+          <div class="PlaceholderBackground">
+            {{ 'lifestyle-2' | placeholder_svg_tag: 'PlaceholderBackground__Svg PlaceholderSvg--dark' }}
+          </div>
+        {%- endunless -%}
+      </div>
+
+    </div>-->
