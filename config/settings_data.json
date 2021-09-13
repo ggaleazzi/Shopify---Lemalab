@@ -1093,12 +1093,33 @@
           "link_text": "",
           "link_url": ""
         }
+      },
+      "1631573390cffcc423": {
+        "type": "testimonials",
+        "blocks": {
+          "1631573390cffcc423-0": {
+            "type": "testimonial",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/Group_587.png",
+              "quote": "<p>Our products are not tested in animals, we love and respect nature always. Our products are not tested in animals, we love and respect nature always. <br\/><br\/><\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "1631573390cffcc423-0"
+        ],
+        "settings": {
+          "autoplay": true,
+          "cycle_speed": 5,
+          "background": "#eaeaea",
+          "text_color": "#1c1b1b"
+        }
       }
     },
     "content_for_index": [
       "slideshow",
-      "1615394373dc10dd35",
       "featured-product",
+      "1615394373dc10dd35",
       "1617728184eaece002",
       "16178151837ca235f9",
       "1615327340978eac17",
@@ -1107,7 +1128,8 @@
       "1615841479d951b43c",
       "16315709559db156d6",
       "blog-posts",
-      "1631571155cc9f5c37"
+      "1631571155cc9f5c37",
+      "1631573390cffcc423"
     ]
   },
   "presets": {
