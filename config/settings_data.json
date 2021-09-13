@@ -571,7 +571,7 @@
           "1615394373dc10dd35-0": {
             "type": "collection",
             "settings": {
-              "collection": "frontpage",
+              "collection": "",
               "image": "shopify:\/\/shop_images\/Rectangle_285.png",
               "image_alignment": "center center",
               "content_position": "bottomLeft",
@@ -586,6 +586,7 @@
             "type": "collection",
             "settings": {
               "collection": "",
+              "image": "shopify:\/\/shop_images\/Rectangle_286.png",
               "image_alignment": "center center",
               "content_position": "bottomLeft",
               "subheading": "",
@@ -658,15 +659,15 @@
           "da494cde-d00f-40a9-8e32-09a7295c48de": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/Erika_new_piece_7.png",
-              "mobile_image": "shopify:\/\/shop_images\/Erika_new_piece_8_copy_10c25aca-8ec5-49b1-a283-ed96bcd2ab3a.png",
               "apply_overlay": true,
               "content_position": "middleCenter",
               "subheading": "THE NEVER-ENDING SCIENCE OF IMPROVEMENT",
               "subheading_alternate": "",
               "title": "Health.   Performance.      Beauty.",
               "button_1_text": "",
-              "button_2_text": ""
+              "button_1_link": "",
+              "button_2_text": "",
+              "button_2_link": ""
             }
           }
         },
