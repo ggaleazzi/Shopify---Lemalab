@@ -521,8 +521,6 @@
           "show_featured_article": false,
           "show_hero_header": true,
           "show_category": false,
-          "image": "shopify:\/\/shop_images\/oeil_6f84b803-2c40-4298-953e-de337e7e50b1.jpg",
-          "image_mobile": "shopify:\/\/shop_images\/oeil_copy_11cb5de2-c8eb-4b72-84e4-37cd9c7c6604.jpg",
           "button_1_link": "shopify:\/\/blogs\/journal",
           "title": "Cutting-edge wellness<br> advice from doctors, <br>elite performers and<br> Olympic coaches."
         }
@@ -1040,6 +1038,20 @@
           "content": "<p>Our founder is the world-renowned artist Erika Lemay. She has performed extensively as a soloist guest star with Cirque du Soleil, her Physical Poetry has been admired by more than 400 million worldwide.<\/p><p>She has become a disruptive icon in the world of live performance: Vanity Fair nominated her as the New Queen of Circus. Hollywood icon-maker Douglas Kirkland&#x27;s latest book &#x27;Physical Poetry Alphabet&#x27; is a tribute to Erika&#x27;s craft. Her book <a href=\"\/products\/almost-perfect\" title=\"Almost Perfect\"><em>Almost Perfect<\/em> <\/a>is being published in 2021. <\/p><p>With strenuous hours of daily training and performances across all five continents with no off-season, she has meticulously created a bulletproof lifestyle—with the help of diligent supplementation and bio hacks—enabling her body to defy both gravity and human possibilities for decades. The career span of a physical artist is usually short due to recurrent injuries and the decline of elasticity in our joints as we age. Our founder spent a lifetime studying the matter and reversing the trend.<\/p>",
           "link_text": ""
         }
+      },
+      "1631570926c1367aa4": {
+        "type": "image-with-text-block",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/Group_65.png",
+          "background": "#ffffff",
+          "text_color": "#1c1b1b",
+          "block_size": "small",
+          "title": "LEMALAB collagen",
+          "content": "<p>LEMAlab is a registered health and wellness brand that distributes high-quality supplements and specialised neutraceuticals. It operates mainly as an e-commerce .<\/p>",
+          "button_label": "",
+          "button_link": "",
+          "show_parallax": false
+        }
       }
     },
     "content_for_index": [
@@ -1051,7 +1063,8 @@
       "1615327340978eac17",
       "1615403667b6938d52",
       "1615841479d951b43c",
-      "blog-posts"
+      "blog-posts",
+      "1631570926c1367aa4"
     ]
   },
   "presets": {
