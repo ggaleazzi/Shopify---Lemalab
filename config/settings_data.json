@@ -508,7 +508,7 @@
       "shop-now": {
         "type": "shop-now",
         "settings": {
-          "show_section": true,
+          "show_section": false,
           "title": "Shop now",
           "collection": "flexible",
           "grid_items_count": 6,
