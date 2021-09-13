@@ -269,12 +269,12 @@
       "featured-product": {
         "type": "featured-product",
         "settings": {
-          "subheading": "",
-          "title": "LEMAlab Supplements",
+          "subheading": "FOR BETTER FLEXIBILITY",
+          "title": "LEMAlab Supplement",
           "show_headings_on_mobile": true,
           "product": "flexible-by-lemalab",
           "show_vendor": false,
-          "show_sku": false,
+          "show_sku": true,
           "show_description": true,
           "description_below_add_to_cart": false,
           "selector_mode": "dropdown",
@@ -493,6 +493,7 @@
       },
       "1615327340978eac17": {
         "type": "testimonials",
+        "disabled": true,
         "blocks": {
           "9efc4f61-7036-48ec-87b4-eb4be3cc7b8a": {
             "type": "testimonial",
@@ -568,6 +569,7 @@
       },
       "1615394373dc10dd35": {
         "type": "collection-list",
+        "disabled": true,
         "blocks": {
           "1615394373dc10dd35-0": {
             "type": "collection",
