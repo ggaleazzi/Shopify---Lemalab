@@ -864,12 +864,13 @@
         "type": "image-with-text-overlay",
         "settings": {
           "section_size": "large",
+          "image": "shopify:\/\/shop_images\/Group_65.png",
           "text_color": "#ffffff",
           "overlay_color": "#000000",
           "overlay_opacity": 24,
-          "subheading": "FLEXIBLE by LEMAlab™",
-          "title": "Enhance Flexibility | Reduce Pain",
-          "content": "<p><a href=\"\/blogs\/journal\/how-to-make-a-cardboard-window-valance-excel-blades\" title=\"FLEXIBILITY SUPPLEMENTS BENEFITS\">KEY BENEFITS<\/a><\/p><p>—SUPPORTS MUSCLES, JOINTS, AND CONNECTIVE TISSUE ELASTICITY.<\/p><p>—HELPS REDUCE INFLAMMATION AND PAIN.<\/p><p>—GREATER CARTILAGE PROTECTION.<\/p><p>—BOOSTS METABOLISM, IMPROVES DIGESTION.<\/p><p>—IMPROVES SKIN, HAIR AND NAIL QUALITY.<\/p>"
+          "subheading": "",
+          "title": "LEMALAB collagen",
+          "content": "<p><br\/>LEMAlab is a registered health and wellness brand that distributes high-quality supplements and specialised neutraceuticals. It operates mainly as an e-commerce <br\/><br\/><\/p>"
         }
       },
       "16178151837ca235f9": {
