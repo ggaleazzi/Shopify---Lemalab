@@ -345,7 +345,7 @@
           "blog-0"
         ],
         "settings": {
-          "subheading": "A trustworthy source of information for those who want to improve their physical functionality and appearance. With science-backed content, we share the secrets of elite performers and celebrities.",
+          "subheading": "LEARN MORE ABOUT OUR PRODUCT",
           "title": "JOURNAL",
           "show_category": false,
           "button_link": "",
@@ -619,38 +619,6 @@
           "subheading": "",
           "title": "",
           "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc"
-        }
-      },
-      "1615841479d951b43c": {
-        "type": "slideshow2",
-        "blocks": {
-          "1615841479d951b43c-0": {
-            "type": "image",
-            "settings": {
-              "apply_overlay": true,
-              "content_position": "bottomRight",
-              "subheading": "Joints | Skin | Hair",
-              "subheading_alternate": "",
-              "title": "Supplement for Flexibility",
-              "button_1_text": "The Secret behind LEMAlab",
-              "button_1_link": "shopify:\/\/pages\/our-story-1",
-              "button_2_text": "",
-              "button_2_link": ""
-            }
-          }
-        },
-        "block_order": [
-          "1615841479d951b43c-0"
-        ],
-        "settings": {
-          "show_fullscreen": true,
-          "show_arrow": false,
-          "autoplay": false,
-          "cycle_speed": 3,
-          "text_color": "#ffffff",
-          "button_color": "#363636",
-          "button_border": "#363636",
-          "button_background": "#ffffff"
         }
       },
       "slideshow3": {
@@ -1083,17 +1051,6 @@
           "show_mobile_product_info": false
         }
       },
-      "1631571155cc9f5c37": {
-        "type": "text-with-image",
-        "settings": {
-          "subheading": "Sub-heading",
-          "title": "Title",
-          "image_position": "right",
-          "content": "<p>Add your own custom content to give more information about your store, availability details...<\/p>",
-          "link_text": "",
-          "link_url": ""
-        }
-      },
       "1631573390cffcc423": {
         "type": "testimonials",
         "blocks": {
@@ -1125,11 +1082,9 @@
       "1615327340978eac17",
       "1615403667b6938d52",
       "1631570926c1367aa4",
-      "1615841479d951b43c",
+      "1631573390cffcc423",
       "16315709559db156d6",
-      "blog-posts",
-      "1631571155cc9f5c37",
-      "1631573390cffcc423"
+      "blog-posts"
     ]
   },
   "presets": {
