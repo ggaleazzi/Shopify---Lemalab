@@ -73,7 +73,8 @@
           "home_page_only": false,
           "background": "#939393",
           "text_color": "#ffffff",
-          "content": "GET $10 OFF ON YOUR FIRST ORDER!"
+          "content": "GET $10 OFF ON YOUR FIRST ORDER!",
+          "link": ""
         }
       },
       "header": {
@@ -85,8 +86,10 @@
               "navigation_mega_menu": "",
               "push_1_heading": "Example heading",
               "push_1_subheading": "Example sub-heading",
+              "push_1_url": "",
               "push_2_heading": "Example heading",
-              "push_2_subheading": "Example sub-heading"
+              "push_2_subheading": "Example sub-heading",
+              "push_2_url": ""
             }
           }
         },
@@ -95,7 +98,6 @@
         ],
         "settings": {
           "use_sticky_header": true,
-          "logo": "shopify:\/\/shop_images\/Group.png",
           "logo_max_width": 140,
           "mobile_logo_max_width": 90,
           "show_currency_selector": false,
@@ -114,15 +116,15 @@
         "blocks": {
           "e63543af-6259-4509-bc44-ae63833a3047": {
             "type": "logo_social",
-            "settings": {}
+            "settings": {
+            }
           },
           "footer-0": {
             "type": "text",
             "settings": {
               "title": "",
               "content": "<p>LEMAlab is a registered health and wellness brand that distributes high-quality supplements and specialized neutraceuticals.<\/p>",
-              "show_social_media": true,
-              "logo": "shopify:\/\/shop_images\/Frame.png"
+              "show_social_media": true
             }
           },
           "footer-1": {
@@ -157,15 +159,15 @@
           "slide-0": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/IMG_0020A-small_finger_copy_4e2ed67d-5314-4ffb-82b0-e3fc0fe60843.jpg",
-              "mobile_image": "shopify:\/\/shop_images\/IMG_0020A-small_finger.jpg",
+              "image": "shopify:\/\/shop_images\/rawan-yasser-seuXd6AQu8g-unsplash_1.png",
+              "mobile_image": "shopify:\/\/shop_images\/rawan-yasser-seuXd6AQu8g-unsplash_2.png",
               "apply_overlay": true,
-              "content_position": "bottomCenter",
-              "subheading": "",
-              "title": "LIFESTYLE DESIGN FOR ELITE PERFORMANCE, BEAUTY AND HEALTH",
-              "button_1_text": "Products",
+              "content_position": "middleLeft",
+              "subheading": "FRESH LOOK &",
+              "title": "CHECK OUR PRODUCT",
+              "button_1_text": "SHOP NOW",
               "button_1_link": "shopify:\/\/collections\/all",
-              "button_2_text": "Info",
+              "button_2_text": "",
               "button_2_link": "shopify:\/\/blogs\/journal"
             }
           }
@@ -346,6 +348,7 @@
           "subheading": "A trustworthy source of information for those who want to improve their physical functionality and appearance. With science-backed content, we share the secrets of elite performers and celebrities.",
           "title": "JOURNAL",
           "show_category": false,
+          "button_link": "",
           "button_text": ""
         }
       },
@@ -494,7 +497,6 @@
           "9efc4f61-7036-48ec-87b4-eb4be3cc7b8a": {
             "type": "testimonial",
             "settings": {
-              "logo": "shopify:\/\/shop_images\/Group_587.png",
               "quote": "<p>We develop highly efficient products, never basing our formulations on trends but only on facts. LEMAlab formulas are pure, clean, with the highest potency and assimilability.<\/p>"
             }
           }
@@ -571,7 +573,6 @@
             "type": "collection",
             "settings": {
               "collection": "",
-              "image": "shopify:\/\/shop_images\/Erika_new_piece_8_copy.png",
               "image_alignment": "center center",
               "content_position": "bottomLeft",
               "subheading": "",
@@ -585,7 +586,6 @@
             "type": "collection",
             "settings": {
               "collection": "",
-              "image": "shopify:\/\/shop_images\/IMG_0203A_2.jpg",
               "image_alignment": "center center",
               "content_position": "bottomLeft",
               "subheading": "",
@@ -617,7 +617,6 @@
           "text_color": "#ffffff",
           "subheading": "",
           "title": "",
-          "image": "shopify:\/\/shop_images\/Erika_new_piece_7_c1632550-cae1-4430-ba0e-b9c8fb2c3fbd.png",
           "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc"
         }
       },
@@ -627,8 +626,6 @@
           "1615841479d951b43c-0": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/IMG_0197A_copy_2.jpg",
-              "mobile_image": "shopify:\/\/shop_images\/IMG_0221_2_38112e66-68a2-4873-800f-f13ee5c91b33.jpg",
               "apply_overlay": true,
               "content_position": "bottomRight",
               "subheading": "Joints | Skin | Hair",
@@ -636,7 +633,8 @@
               "title": "Supplement for Flexibility",
               "button_1_text": "The Secret behind LEMAlab",
               "button_1_link": "shopify:\/\/pages\/our-story-1",
-              "button_2_text": ""
+              "button_2_text": "",
+              "button_2_link": ""
             }
           }
         },
@@ -864,7 +862,6 @@
         "type": "image-with-text-overlay",
         "settings": {
           "section_size": "large",
-          "image": "shopify:\/\/shop_images\/IMG_0277.jpg",
           "text_color": "#ffffff",
           "overlay_color": "#000000",
           "overlay_opacity": 24,
@@ -880,27 +877,27 @@
           "16178151837ca235f9-0": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/IMG_0277_a7fc0465-917c-48fe-8e53-83c38543f8a2.jpg",
-              "mobile_image": "shopify:\/\/shop_images\/IMG_0127A_2_copy.jpg",
               "apply_overlay": true,
               "content_position": "bottomLeft",
               "subheading": "KEY BENEFITS <br>Supports muscles, joints, and connective tissue elasticity. Helps reduce inflammation and pain. Greater cartilage protection. Boosts metabolism, improves digestion, superior bioavailability Improves skin, hair and nail quality.",
               "title": "Tell your story",
               "button_1_text": "",
-              "button_2_text": ""
+              "button_1_link": "",
+              "button_2_text": "",
+              "button_2_link": ""
             }
           },
           "16178151837ca235f9-1": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/IMG_0259A_2_copy.jpg",
-              "mobile_image": "shopify:\/\/shop_images\/IMG_0072A_f5457908-8050-4130-92e5-7b240fd92d6f.jpg",
               "apply_overlay": true,
               "content_position": "middleCenter",
               "subheading": "KEY BENEFITS  <br>Supports muscles, joints, and connective tissue elasticity. <br>Helps reduce inflammation and pain. <br>Greater cartilage protection. <br>Boosts metabolism, improves digestion, superior bioavailability <br>Improves skin, hair and nail quality.",
               "title": "Why you need <br>Collagen",
               "button_1_text": "",
-              "button_2_text": ""
+              "button_1_link": "",
+              "button_2_text": "",
+              "button_2_link": ""
             }
           }
         },
@@ -1008,7 +1005,8 @@
           "page-faq-template-7",
           "page-faq-template-8"
         ],
-        "settings": {}
+        "settings": {
+        }
       },
       "page-contact-template": {
         "type": "page-contact-template",
@@ -1025,7 +1023,8 @@
         "block_order": [
           "page-contact-template-0"
         ],
-        "settings": {}
+        "settings": {
+        }
       },
       "text-with-image4": {
         "type": "text-with-image4",
