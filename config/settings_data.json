@@ -567,12 +567,12 @@
       },
       "1615394373dc10dd35": {
         "type": "collection-list",
-        "disabled": true,
         "blocks": {
           "1615394373dc10dd35-0": {
             "type": "collection",
             "settings": {
-              "collection": "",
+              "collection": "frontpage",
+              "image": "shopify:\/\/shop_images\/Rectangle_285.png",
               "image_alignment": "center center",
               "content_position": "bottomLeft",
               "subheading": "",
@@ -1052,6 +1052,46 @@
           "button_link": "",
           "show_parallax": false
         }
+      },
+      "16315709559db156d6": {
+        "type": "shop-the-look",
+        "disabled": true,
+        "blocks": {
+          "16315709559db156d6-0": {
+            "type": "look",
+            "settings": {
+              "dot_style": "light",
+              "product_1": "",
+              "product_1_horizontal_position": 30,
+              "product_1_vertical_position": 40,
+              "product_2": "",
+              "product_2_horizontal_position": 45,
+              "product_2_vertical_position": 65,
+              "product_3": "",
+              "product_3_horizontal_position": 70,
+              "product_3_vertical_position": 50
+            }
+          }
+        },
+        "block_order": [
+          "16315709559db156d6-0"
+        ],
+        "settings": {
+          "subheading": "Shop",
+          "title": "Our looks",
+          "show_mobile_product_info": false
+        }
+      },
+      "1631571155cc9f5c37": {
+        "type": "text-with-image",
+        "settings": {
+          "subheading": "Sub-heading",
+          "title": "Title",
+          "image_position": "right",
+          "content": "<p>Add your own custom content to give more information about your store, availability details...<\/p>",
+          "link_text": "",
+          "link_url": ""
+        }
       }
     },
     "content_for_index": [
@@ -1062,9 +1102,11 @@
       "16178151837ca235f9",
       "1615327340978eac17",
       "1615403667b6938d52",
+      "1631570926c1367aa4",
       "1615841479d951b43c",
+      "16315709559db156d6",
       "blog-posts",
-      "1631570926c1367aa4"
+      "1631571155cc9f5c37"
     ]
   },
   "presets": {
