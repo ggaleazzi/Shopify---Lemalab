@@ -676,7 +676,7 @@
           "b6a0c328-b44a-454d-b099-7c2f6170cfd4": {
             "type": "blog",
             "settings": {
-              "blog": "interviews"
+              "blog": "journal"
             }
           }
         },
@@ -757,6 +757,7 @@
             "type": "video",
             "settings": {
               "thumb_video_url": "https:\/\/www.youtube.com\/watch?v=JaR4RQAE2fc&list=PLVvr6_-IJP3XifHG66RlKQh7y57kZ-a8K&index=61",
+              "thumb_image": "shopify:\/\/shop_images\/Rectangle_1285.png",
               "video_title": "Learn more about LEMAlab"
             }
           },
@@ -764,6 +765,7 @@
             "type": "video",
             "settings": {
               "thumb_video_url": "https:\/\/www.youtube.com\/watch?v=3xt8Mp8oWzc&list=PLVvr6_-IJP3XifHG66RlKQh7y57kZ-a8K&index=68",
+              "thumb_image": "shopify:\/\/shop_images\/Rectangle_1852.png",
               "video_title": "How to become more flexible"
             }
           },
@@ -771,6 +773,7 @@
             "type": "video",
             "settings": {
               "thumb_video_url": "https:\/\/www.youtube.com\/watch?v=6bLVdKbPHHY&list=PLVvr6_-IJP3XifHG66RlKQh7y57kZ-a8K&index=65",
+              "thumb_image": "shopify:\/\/shop_images\/Rectangle_18225.png",
               "video_title": "Know more about LEMAlab"
             }
           },
@@ -778,6 +781,7 @@
             "type": "video",
             "settings": {
               "thumb_video_url": "https:\/\/www.youtube.com\/watch?v=Mprnd6qccac",
+              "thumb_image": "shopify:\/\/shop_images\/Rectangle_185.png",
               "video_title": "Learn how to exercice more"
             }
           }
@@ -792,6 +796,7 @@
           "title": "VIDEOS",
           "section_size": "large",
           "text_color": "#ffffff",
+          "image": "shopify:\/\/shop_images\/Rectangle_180.png",
           "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
           "button_1_text": "WATCH MORE",
           "button_1_link": "shopify:\/\/blogs\/journal"
