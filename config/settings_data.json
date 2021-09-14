@@ -609,11 +609,13 @@
           "da494cde-d00f-40a9-8e32-09a7295c48de": {
             "type": "image",
             "settings": {
+              "image": "shopify:\/\/shop_images\/Group_65.png",
+              "mobile_image": "shopify:\/\/shop_images\/rawan-yasser-seuXd6AQu8g-unsplash_2.png",
               "apply_overlay": true,
-              "content_position": "middleCenter",
-              "subheading": "THE NEVER-ENDING SCIENCE OF IMPROVEMENT",
-              "subheading_alternate": "",
-              "title": "Health.   Performance.      Beauty.",
+              "content_position": "middleLeft",
+              "subheading": "Flexible by LEMAlab",
+              "subheading_alternate": "LEMAlab is a registered health and wellness<br> brand that distributes high-quality <br>supplements and specialised neutraceuticals. <br>It operates mainly as an e-commerce",
+              "title": "",
               "button_1_text": "",
               "button_1_link": "",
               "button_2_text": "",
@@ -625,7 +627,7 @@
           "da494cde-d00f-40a9-8e32-09a7295c48de"
         ],
         "settings": {
-          "show_fullscreen": true,
+          "show_fullscreen": false,
           "show_arrow": false,
           "autoplay": false,
           "cycle_speed": 5,
