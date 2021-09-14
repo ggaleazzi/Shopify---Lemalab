@@ -504,7 +504,7 @@
           "show_category": false,
           "image": "shopify:\/\/shop_images\/Rectangle_177.png",
           "button_1_link": "shopify:\/\/blogs\/journal",
-          "title": "Cutting-edge wellness<br> advice from doctors, <br>elite performers and<br> Olympic coaches."
+          "title": "<div style=\"color:black\"> Cutting-edge wellness<br> advice from doctors, <br>elite performers and<br> Olympic coaches.<\/div>"
         }
       },
       "shop-now": {
