@@ -98,6 +98,7 @@
         ],
         "settings": {
           "use_sticky_header": true,
+          "logo": "shopify:\/\/shop_images\/Group.png",
           "logo_max_width": 140,
           "mobile_logo_max_width": 90,
           "show_currency_selector": false,
