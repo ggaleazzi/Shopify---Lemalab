@@ -125,7 +125,8 @@
             "settings": {
               "title": "",
               "content": "<p>LEMAlab is a registered health and wellness brand that distributes high-quality supplements and specialized neutraceuticals.<\/p>",
-              "show_social_media": true
+              "show_social_media": true,
+              "logo": "shopify:\/\/shop_images\/Frame.png"
             }
           },
           "footer-1": {
